@@ -124,10 +124,12 @@ switch(estado)
 	case "pega":
 		col = instance_place(x, y, obj_osso);
 		
-		dir = point_direction(x, y, obj_osso.x, obj_osso.y);
-		velh = lengthdir_x(2, dir);
-		velv = lengthdir_y(2, dir);
-		
+		if (instance_exists(obj_osso))
+		{
+			dir = point_direction(x, y, obj_osso.x, obj_osso.y);
+			velh = lengthdir_x(2, dir);
+			velv = lengthdir_y(2, dir);
+		}
 		if (velh > 0)
 		{
 			face = 2;
